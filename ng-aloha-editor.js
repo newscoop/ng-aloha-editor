@@ -82,6 +82,18 @@ module.directive('aloha', ['$location', '$rootScope', function ($location, $root
     }
 
     /**
+    * Also, we don't want the default ctrl+a behaviour 
+    */
+    function replaceControlAHandler(elem) {
+        Aloha.jQuery(elem).on('keydown', function(e) {
+            if (e.keyCode === 65 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+
+    /**
     * Also, we don't want the default ctrl+click behaviour of aloha, which 
     * is to do window.location.href = href because that would reload the page.
     *
@@ -231,6 +243,7 @@ module.directive('aloha', ['$location', '$rootScope', function ($location, $root
             });
 
             replaceAngularLinkClickHandler(elem);
+            replaceControlAHandler(elem);
         }
     };
 }]);
