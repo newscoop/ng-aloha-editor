@@ -32,7 +32,7 @@ Aloha = window.Aloha || {};
 Aloha.settings = Aloha.settings || {};
 
 var DirectiveSettings = {
-    baseUrl: ngAlohaEditorConfig.baseUrl + 'libs/alohaeditor-0.23.26/aloha/lib',
+    baseUrl: ngAlohaEditorConfig.baseUrl + 'libs/alohaeditor-0.26.4/aloha/lib',
     logLevels: {'error': true, 'warn': true, 'info': false, 'debug': false},
     errorhandling : false
 };
